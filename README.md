@@ -4,11 +4,11 @@ Fork of xwinwrap.
 Xwinwrap allows you to stick an app such as a videoplayer or gif viewer to your desktop background.  
 Gif as a background:
 
-![demo gif](https://github.com/aaahh/xwinwrap/blob/master/examples/demo-gif.gif)
+![demo gif](https://github.com/mmhobi7/xwinwrap/blob/readme/demo-gif.gif)
 
 Video as a background (it is much smoother than the gif would make it appear):
 
-![demo gif](https://github.com/aaahh/xwinwrap/blob/master/examples/demo-video.gif)
+![demo gif](https://github.com/mmhobi7/xwinwrap/blob/readme/demo-video.gif)
 
 ### Installing
 
