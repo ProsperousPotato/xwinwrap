@@ -1,23 +1,15 @@
 # Xwinwrap
 
-Fork of xwinwrap.  
-Xwinwrap allows you to stick an app such as a videoplayer or gif viewer to your desktop background.  
-Gif as a background:
-
-![demo gif](https://github.com/mmhobi7/xwinwrap/blob/readme/demo-gif.gif)
-
-Video as a background (it is much smoother than the gif would make it appear):
-
-![demo gif](https://github.com/mmhobi7/xwinwrap/blob/readme/demo-video.gif)
+Fork of xwinwrap.
+Xwinwrap allows you to embed any other X11 window into the root X11 window; now on OpenBSD.
 
 ### Installing
 
 ```
-sudo apt-get install xorg-dev build-essential libx11-dev x11proto-xext-dev libxrender-dev libxext-dev
-git clone https://github.com/mmhobi7/xwinwrap.git
+git clone https://github.com/ProsperousPotato/xwinwrap
 cd xwinwrap
 make
-sudo make install
+doas make install
 make clean
 ```
 
@@ -25,9 +17,9 @@ make clean
 
 ```
 cd /path/to/xwinwrap
-sudo make uninstall
+doas make uninstall
 cd ..
-rm -r xwinwrap
+rm -rf xwinwrap
 ```
 
 ### Usage
@@ -62,11 +54,14 @@ Options:
              -d      - Daemonize
              -debug  - Enable debug messages
 ```
-Example
 
-`xwinwrap -g 400x400 -ni -s -nf -b -un -argb -sh circle -- gifview -w WID mygif.gif -a`
+### Example
+
+#### Have neofetch as a wallpaper
+`xwinwrap -ov -fs -- xterm -hold -geometry 1920x1080 -bg black -fg white +sb -into WID -e neofetch`
 
 `nice xwinwrap -b -s -fs -st -sp -nf -ov -fdt -- mpv -wid WID --really-quiet --framedrop=vo --no-audio --panscan="1.0" /path/to/your/video`
+
 ### Changes
 
 * Added ability to make undecorated window
@@ -74,5 +69,10 @@ Example
 * Refactored window hints
 * Add DESKTOP window type flag
 
+* Compiles out-of-the-box on OpenBSD
+
 ----
 Original source - https://launchpad.net/xwinwrap
+
+----
+Forked from - https://github.com/mmhobi7/xwinwrap
