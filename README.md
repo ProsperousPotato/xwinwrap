@@ -26,7 +26,7 @@ rm -rf xwinwrap
 
 ```
 Usage: 
-    xwinwrap [OPTIONS...] -- <video-player> [VIDEO-PLAYER OPTIONS...] <video-file>
+    xwinwrap [OPTIONS...] -- <program> [OPTIONS...]
  
 Options:
              -g {w}x{h}+{x}+{y}    
@@ -58,9 +58,8 @@ Options:
 ### Example
 
 #### Have neofetch as a wallpaper
-`xwinwrap -ov -fs -- xterm -hold -geometry 1920x1080 -bg black -fg white +sb -into WID -e neofetch`
 
-`nice xwinwrap -b -s -fs -st -sp -nf -ov -fdt -- mpv -wid WID --really-quiet --framedrop=vo --no-audio --panscan="1.0" /path/to/your/video`
+`xwinwrap -ov -fs -- xterm -hold -geometry 1920x1080 -bg black -fg white +sb -into WID -e neofetch`
 
 ### Changes
 
