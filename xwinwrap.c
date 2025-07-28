@@ -331,8 +331,10 @@ int main(int argc, char **argv) {
   bool skip_pager = false;
   bool daemonize = false;
 
+#ifdef __OpenBSD__
     if (pledge("stdio unix proc exec inet rpath", NULL) == -1)
         fprintf(stderr, "pledge\n");
+#endif
 
   win_shape shape = SHAPE_RECT;
   Pixmap mask;
