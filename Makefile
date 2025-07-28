@@ -14,17 +14,19 @@ prefix = /usr/local
 bindir = $(prefix)/bin
 
 CC = cc
-RM = rm -f
 INSTALL = install
 
 all: xwinwrap
 
-install: xwinwrap
+xwinwrap: main.c Makefile
+	$(CC) $(CFLAGS) $(LDLIBS) -o $@ main.c
+
+install: all
 	$(INSTALL) -d -m 755 '$(DESTDIR)$(bindir)'
 	$(INSTALL) xwinwrap '$(DESTDIR)$(bindir)'
 
 clean:
-	$(RM) xwinwrap
+	rm -f xwinwrap
 
 uninstall:
 	rm -f '$(DESTDIR)$(bindir)/xwinwrap'
