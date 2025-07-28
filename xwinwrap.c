@@ -331,6 +331,9 @@ int main(int argc, char **argv) {
   bool skip_pager = false;
   bool daemonize = false;
 
+    if (pledge("stdio unix proc exec inet rpath", NULL) == -1)
+        fprintf(stderr, "pledge\n");
+
   win_shape shape = SHAPE_RECT;
   Pixmap mask;
   GC mask_gc;
@@ -744,7 +747,7 @@ int main(int argc, char **argv) {
 
   XSync(display, window.window);
 
-  sprintf(widArg, "0x%x", (int)window.window);
+  snprintf(widArg, sizeof(widArg), "0x%x", (int)window.window);
 
   pid = fork();
 
