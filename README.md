@@ -59,7 +59,7 @@ Options:
 
 #### Set neofetch as desktop wallpaper
 
-`xwinwrap -ni -nf -ovr -fs -- st -w WID -e neofetch`
+`xwinwrap -ni -nf -ovr -fs -- xterm -bg black -fg white +sb -hold -into WID -e neofetch`
 
 #### Set htop as desktop wallpaper
 `xwinwrap -ni -nf -ovr -fs -- st -w WID -e htop`
